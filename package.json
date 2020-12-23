@@ -1,0 +1,13 @@
+{
+	"name": "fullstack-tutorial",
+	"description": "This is the fullstack app for the [Apollo tutorial](http://apollographql.com/docs/tutorial/introduction.html). 🚀",
+	"author": "Tri Che",
+	"license": "MIT",
+	"version": "1.0.0",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"lerna": "3.22.1"
+	}
+}

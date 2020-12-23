@@ -1,0 +1,9 @@
+{
+	"packages": ["spacex-client", "spacex-server"],
+	"command": {
+		"bootstrap": {
+			"npmClientArgs": ["--no-package-lock"]
+		}
+	},
+	"version": "1.0.0"
+}
