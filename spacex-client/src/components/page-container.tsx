@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 
 import { unit, colors } from "../styles";
 
@@ -16,7 +16,7 @@ export default function PageContainer(props: any) {
  * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
  */
 
-const Bar = styled("div")({
+const Bar = styled.div({
 	flexShrink: 0,
 	height: 24,
 	backgroundColor: colors.primary,
@@ -24,7 +24,7 @@ const Bar = styled("div")({
 	top: 0,
 });
 
-const Container = styled("div")({
+const Container = styled.div({
 	display: "flex",
 	flexDirection: "column",
 	flexGrow: 1,

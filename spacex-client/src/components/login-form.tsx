@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import styled, { css } from "react-emotion";
+import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import { size } from "polished";
 
 import Button from "./button";
@@ -41,11 +42,11 @@ export default class LoginForm extends Component<
 	render() {
 		return (
 			<Container>
-				<Header>
+				<Header className={svgClassName}>
 					<StyledCurve />
 					<StyledLogo />
 				</Header>
-				<StyledRocket />
+				<StyledRocket className={svgClassName} />
 				<Heading>Space Explorer</Heading>
 				<StyledForm onSubmit={this.onSubmit}>
 					<StyledInput
@@ -67,7 +68,7 @@ export default class LoginForm extends Component<
  * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
  */
 
-const Container = styled("div")({
+const Container = styled.div({
 	display: "flex",
 	flexDirection: "column",
 	alignItems: "center",
@@ -85,7 +86,7 @@ const svgClassName = css({
 	fill: "currentColor",
 });
 
-const Header = styled("header")(svgClassName, {
+const Header = styled.header({
 	width: "100%",
 	marginBottom: unit * 5,
 	padding: unit * 2.5,
@@ -105,15 +106,15 @@ const StyledCurve = styled(Curve)(size("100%"), {
 	left: 0,
 });
 
-const Heading = styled("h1")({
+const Heading = styled.h1({
 	margin: `${unit * 3}px 0 ${unit * 6}px`,
 });
 
-const StyledRocket = styled(Rocket)(svgClassName, {
+const StyledRocket = styled(Rocket)({
 	width: 250,
 });
 
-const StyledForm = styled("form")({
+const StyledForm = styled.form({
 	width: "100%",
 	maxWidth: 406,
 	padding: unit * 3.5,
@@ -123,7 +124,7 @@ const StyledForm = styled("form")({
 	backgroundColor: "white",
 });
 
-const StyledInput = styled("input")({
+const StyledInput = styled.input({
 	width: "100%",
 	marginBottom: unit * 2,
 	padding: `${unit * 1.25}px ${unit * 2.5}px`,

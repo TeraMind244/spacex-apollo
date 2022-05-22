@@ -1,27 +1,29 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 
-import MenuItem from "./menu-item";
+import MenuItem, { menuItemClassName } from "./menu-item";
 import LogoutButton from "../containers/logout-button";
+
+import { colors, unit } from "../styles";
+
 import { ReactComponent as HomeIcon } from "../assets/icons/home.svg";
 import { ReactComponent as CartIcon } from "../assets/icons/cart.svg";
 import { ReactComponent as ProfileIcon } from "../assets/icons/profile.svg";
-import { colors, unit } from "../styles";
 
 export default function Footer() {
 	return (
 		<Container>
 			<InnerContainer>
-				<MenuItem to="/">
-					<HomeIcon />
+				<MenuItem className={menuItemClassName} to="/">
+					<HomeIcon width={48} height={48} fill={colors.textSecondary}/>
 					Home
 				</MenuItem>
-				<MenuItem to="/cart">
-					<CartIcon />
+				<MenuItem className={menuItemClassName} to="/cart">
+					<CartIcon width={48} height={48} fill={colors.textSecondary} />
 					Cart
 				</MenuItem>
-				<MenuItem to="/profile">
-					<ProfileIcon />
+				<MenuItem className={menuItemClassName} to="/profile">
+					<ProfileIcon width={48} height={48} fill={colors.textSecondary}/>
 					Profile
 				</MenuItem>
 				<LogoutButton />
@@ -34,19 +36,20 @@ export default function Footer() {
  * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
  */
 
-const Container = styled("footer")({
+const Container = styled.footer({
 	flexShrink: 0,
 	marginTop: "auto",
-	backgroundColor: "white",
+	backgroundColor: colors.primary,
 	color: colors.textSecondary,
 	position: "sticky",
 	bottom: 0,
 });
 
-const InnerContainer = styled("div")({
+const InnerContainer = styled.div({
 	display: "flex",
 	alignItems: "center",
 	maxWidth: 460,
 	padding: unit * 2,
 	margin: "0 auto",
+	justifyContent: 'space-between'
 });

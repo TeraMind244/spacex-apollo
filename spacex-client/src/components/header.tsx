@@ -1,8 +1,9 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import { size } from "polished";
 
 import { unit, colors } from "../styles";
+
 import dog1 from "../assets/images/dog-1.png";
 import dog2 from "../assets/images/dog-2.png";
 import dog3 from "../assets/images/dog-3.png";

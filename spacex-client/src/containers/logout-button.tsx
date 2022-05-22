@@ -1,18 +1,20 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import { useApolloClient } from "@apollo/client";
 
 import { menuItemClassName } from "../components/menu-item";
 import { isLoggedInVar } from "../cache";
+import { colors } from "../styles";
 
 import { ReactComponent as ExitIcon } from "../assets/icons/exit.svg";
 
-const LogoutButton: React.FC = () => {
+const LogoutButton = () => {
 	const client = useApolloClient();
 
 	return (
 		<StyledButton
 			data-testid="logout-button"
+			className={menuItemClassName}
 			onClick={() => {
 				// Evict and garbage-collect the cached user object
 				client.cache.evict({ fieldName: "me" });
@@ -27,7 +29,7 @@ const LogoutButton: React.FC = () => {
 				isLoggedInVar(false);
 			}}
 		>
-			<ExitIcon />
+			<ExitIcon width={48} height={48} fill={colors.textSecondary} />
 			Logout
 		</StyledButton>
 	);
@@ -35,8 +37,8 @@ const LogoutButton: React.FC = () => {
 
 export default LogoutButton;
 
-const StyledButton = styled("button")(menuItemClassName, {
-	background: "none",
+const StyledButton = styled.button({
 	border: "none",
 	padding: 0,
+	backgroundColor: "transparent",
 });

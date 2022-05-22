@@ -1,22 +1,17 @@
 import React from "react";
-import styled, { css } from "react-emotion";
+import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import { Link } from "@reach/router";
 
-import galaxy from "../assets/images/galaxy.jpg";
-import iss from "../assets/images/iss.jpg";
-import moon from "../assets/images/moon.jpg";
 import { unit } from "../styles";
+import { getBackgroundImage } from "../utils";
 
-const backgrounds = [galaxy, iss, moon];
-export function getBackgroundImage(id: string) {
-	return `url(${backgrounds[Number(id) % backgrounds.length]})`;
-}
-
-export default ({ launch }: any) => {
+const LaunchTile = ({ launch }: any) => {
 	const { id, mission, rocket } = launch;
 	return (
 		<StyledLink
 			to={`/launch/${id}`}
+			className={cardClassName}
 			style={{
 				backgroundImage: getBackgroundImage(id),
 			}}
@@ -26,6 +21,8 @@ export default ({ launch }: any) => {
 		</StyledLink>
 	);
 };
+
+export default LaunchTile;
 
 /**
  * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
@@ -40,7 +37,8 @@ export const cardClassName = css({
 });
 
 const padding = unit * 2;
-const StyledLink = styled(Link)(cardClassName, {
+
+const StyledLink = styled(Link)({
 	display: "block",
 	height: 193,
 	marginTop: padding,

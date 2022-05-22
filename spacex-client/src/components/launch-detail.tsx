@@ -1,13 +1,15 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 
 import { unit } from "../styles";
-import { cardClassName, getBackgroundImage } from "./launch-tile";
+import { cardClassName } from "./launch-tile";
+import { getBackgroundImage } from "../utils";
 
-const LaunchDetail: React.FC<any> = ({ id, site, rocket }: any) => (
+const LaunchDetail = ({ id, site, rocket }: any) => (
 	<Card
+		className={cardClassName}
 		style={{
-			backgroundImage: getBackgroundImage(id as string),
+			backgroundImage: getBackgroundImage(id),
 		}}
 	>
 		<h3>
@@ -21,7 +23,7 @@ const LaunchDetail: React.FC<any> = ({ id, site, rocket }: any) => (
  * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
  */
 
-const Card = styled("div")(cardClassName, {
+const Card = styled.div({
 	height: 365,
 	marginBottom: unit * 4,
 });

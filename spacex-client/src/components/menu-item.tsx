@@ -1,5 +1,7 @@
-import styled, { css } from "react-emotion";
+import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import { Link } from "@reach/router";
+
 import { colors, unit } from "../styles";
 
 export const menuItemClassName = css({
@@ -19,7 +21,7 @@ export const menuItemClassName = css({
 	},
 });
 
-const MenuItem = styled(Link)(menuItemClassName, {
+const MenuItem = styled(Link)({
 	textDecoration: "none",
 });
 
