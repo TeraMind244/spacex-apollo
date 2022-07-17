@@ -39,7 +39,8 @@
 		"extends": "react-app"
 	},
 	"resolutions": {
-		"nth-check": "2.1.1"
+		"nth-check": "2.1.1",
+		"moment": "2.29.4"
 	},
 	"browserslist": [
 		">0.2%",
