@@ -1,4 +1,8 @@
 {
-	"packages": ["spacex-client", "spacex-server"],
-	"version": "1.0.0"
+	"packages": [
+		"spacex-client",
+		"spacex-server"
+	],
+	"version": "1.0.0",
+	"npmClient": "yarn"
 }
